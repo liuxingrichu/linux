@@ -1,0 +1,40 @@
+﻿类型：telnet 串口IP：192.168.100.100 端口：6008	波特率：9600	
+============================================================
+sys	进入系统配置
+interface ?	获取帮助
+dis vlan	显示VLAN总体信息
+dis this	显示当前配置
+=======================================
+《配置VLAN》
+vlan 1002
+interface Vlanif 1002
+ip address 192.168.10.10 255.255.255.0
+=======================================
+commit	确认
+interface 10GE 1/0/1	进入端口
+port link-type access	配置access口
+undo default vlan	清除VLAN配置
+undo port link-type	清除端口类型
+shutdown	端口下电
+undo shutdown	取消端口下电配置
+=======================================
+《配置端口》
+interface 10GE 1/0/1
+port link-type trunk
+port default vlan 1002
+=======================================
+q	退出系统配置
+lldp enable	使能lldp功能
+dis lldp local	查看ID
+save	保存系统配置
+dis interface brief	查看端口上下电情况
+dis mac-address	查看端口对应MAC情况
+=======================================
+《恢复出厂设置》
+reset saved-configuration
+是否擦除，选Y
+reboot
+是否保存，选N
+是否重启，选Y
+
+
