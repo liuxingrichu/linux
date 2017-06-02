@@ -26,8 +26,11 @@ cat /proc/interrupts	查看各设备的中断请求(IRQ)
 （6）内核
 uname -a
 
-（7）硬件设备挂载
-mount /dev/sdb	/mnt/test/
+（7）硬件设备挂卸载
+# mkfs /dev/sdb	文件系统分区
+# mount /dev/sdb	/mnt/test/	挂载
+# umount /dev/sdb	/mnt/test/	卸载
+# sync	刷新
 
 （8）系统盘与数据盘
 系统盘对应为/
@@ -35,3 +38,4 @@ mount /dev/sdb	/mnt/test/
 
 （9）图形界面卡死解决方法
 # killall -9 gnome-shell
+
