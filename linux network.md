@@ -1,15 +1,8 @@
-#ifconfig
+（1）查看IP信息
+# ifconfig
 
-
-
-【1】增加账户
-#useradd username
-
-
-【2】删除账户
-#userdel [-r] username
-
-‘-r’ 选项的作用只有一个，就是删除账户的时候连带账户的家目录一起删除。
+（2）查看网络设备
+# ifconfig -a
 
 【3】配置centos网络
 
@@ -25,8 +18,6 @@ NETMASK=255.255.255.0
 GATEWAY=10.72.137.1
 ONBOOT=yes
 BOOTPROTO=none
-
-
 
 【4】出现Bringing up interface eth0:  Device eth0 does not seem to be present,delaying initialization.                    [FAILED]
 
@@ -56,21 +47,4 @@ BOOTPROTO=none
 
 正常了。
 
-【5】查看主机名
-$hostname
-
-【6】无密码登陆
-$ssh-keygen
-$ssh-copy-id "-p52113 root@10.0.0.31"
-$ssh-copy-id "root@10.0.0.31"
-
-【7】修改用户密码
-#passwd username
-
-【8】关机
-#shutdown -h now
-#poweroff
-
-【9】重启
-#reboot
 
