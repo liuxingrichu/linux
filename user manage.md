@@ -31,5 +31,8 @@ $ssh-copy-id "root@10.0.0.31"
 # cat /etc/centos-release
 # uname -a
 
+（11）安装系统后，不知root密码
+$ sudo passwd root
+
 
 
