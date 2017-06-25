@@ -3,6 +3,7 @@ Ubuntu官网镜像下载地址
 https://www.ubuntu.com/download/alternative-downloads
 
 注：镜像选择Ubuntu 16.04.2 Server (64-bit)，即ubuntu-16.04.2-server-amd64.iso
+建议：镜像安装内存选择1G，大于512M奥
 
 docker官网安装文档
 https://docs.docker.com/engine/installation/
