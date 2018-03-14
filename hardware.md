@@ -1,41 +1,51 @@
-£¨1£©CPU
-lscpu	²é¿´µÄÊÇcpuµÄÍ³¼ÆĞÅÏ¢
-cat /proc/cupinfo	²é¿´µÄÊÇcpuµÄÏêÏ¸ĞÅÏ¢
-getconf LONG_BIT	²é¿´µ±Ç°CPUÔËĞĞÔÚ32/64bitÄ£Ê½
+### ç¡¬ä»¶ä¿¡æ¯ ###
+- CPU
+	- lscpu	æŸ¥çœ‹çš„æ˜¯cpuçš„ç»Ÿè®¡ä¿¡æ¯
+	- cat /proc/cupinfo	æŸ¥çœ‹çš„æ˜¯cpuçš„è¯¦ç»†ä¿¡æ¯
+	- getconf LONG_BIT	æŸ¥çœ‹å½“å‰CPUè¿è¡Œåœ¨32/64bitæ¨¡å¼
+	- dmidecode | grep -i 'version' 	CPUä¿¡æ¯
 
-£¨2£©ÄÚ´æ
-free -g	²é¿´ÄÚ´æ
-cat /proc/meminfo	²é¿´ÄÚ´æĞÅÏ¢
+- å†…å­˜
+	- free -g	æŸ¥çœ‹å†…å­˜
+	- cat /proc/meminfo	æŸ¥çœ‹å†…å­˜ä¿¡æ¯
+	- dmidecode | grep -i 'size'
 
-£¨3£©Ó²ÅÌºÍ·ÖÇø
-lsblk	²é¿´Ó²ÅÌºÍ·ÖÇø·Ö²¼
-fdisk -l	¿´Ó²ÅÌºÍ·ÖÇøµÄÏêÏ¸ĞÅÏ¢
-lsscsi	ÁĞ³öÏñÓ²ÅÌºÍ¹âÇıµÈ scsi/sataÉè±¸µÄĞÅÏ¢
-df ÁĞ³ö²»Í¬·ÖÇøµÄ¸ÅÒªĞÅÏ¢¡¢¹ÒÔØµã¡¢ÒÑÓÃµÄºÍ¿ÉÓÃµÄ¿Õ¼ä
-dmesg	²éÑ¯Ó²¼şºÍbootĞÅÏ¢
-mount	²éÑ¯¹ÒÔØĞÅÏ¢
+- ç¡¬ç›˜å’Œåˆ†åŒº
+	- lsblk	æŸ¥çœ‹ç¡¬ç›˜å’Œåˆ†åŒºåˆ†å¸ƒ
+	- fdisk -l	çœ‹ç¡¬ç›˜å’Œåˆ†åŒºçš„è¯¦ç»†ä¿¡æ¯
+	- lsscsi	åˆ—å‡ºåƒç¡¬ç›˜å’Œå…‰é©±ç­‰ scsi/sataè®¾å¤‡çš„ä¿¡æ¯
+	- df åˆ—å‡ºä¸åŒåˆ†åŒºçš„æ¦‚è¦ä¿¡æ¯ã€æŒ‚è½½ç‚¹ã€å·²ç”¨çš„å’Œå¯ç”¨çš„ç©ºé—´
+	- dmesg	æŸ¥è¯¢ç¡¬ä»¶å’Œbootä¿¡æ¯
+	- mount	æŸ¥è¯¢æŒ‚è½½ä¿¡æ¯
 
-£¨4£©ÍøÂç
-ifconfig -a	²é¿´ÏµÍ³µÄËùÓĞÍøÂç½Ó¿Ú
-ethtool eth0	²é¿´Ä³¸öÍøÂç½Ó¿ÚµÄÏêÏ¸ĞÅÏ¢
-dmesg | grep -i eth	²é¿´Íø¿¨ĞÅÏ¢ 
+- ç½‘ç»œ
+	- ifconfig -a	æŸ¥çœ‹ç³»ç»Ÿçš„æ‰€æœ‰ç½‘ç»œæ¥å£
+	- ethtool eth0	æŸ¥çœ‹æŸä¸ªç½‘ç»œæ¥å£çš„è¯¦ç»†ä¿¡æ¯
+	- dmesg | grep -i eth	æŸ¥çœ‹ç½‘å¡ä¿¡æ¯ 
 
-£¨5£©ÖĞ¶Ï
-cat /proc/interrupts	²é¿´¸÷Éè±¸µÄÖĞ¶ÏÇëÇó(IRQ)
+- ä¸­æ–­
+	- cat /proc/interrupts	æŸ¥çœ‹å„è®¾å¤‡çš„ä¸­æ–­è¯·æ±‚(IRQ)
 
-£¨6£©ÄÚºË
-uname -a
+- å†…æ ¸
+	- uname -a
 
-£¨7£©Ó²¼şÉè±¸¹ÒĞ¶ÔØ
-# mkfs /dev/sdb	ÎÄ¼şÏµÍ³·ÖÇø
-# mount /dev/sdb	/mnt/test/	¹ÒÔØ
-# umount /dev/sdb	/mnt/test/	Ğ¶ÔØ
-# sync	Ë¢ĞÂ
+- ç¡¬ä»¶è®¾å¤‡æŒ‚å¸è½½
 
-£¨8£©ÏµÍ³ÅÌÓëÊı¾İÅÌ
-ÏµÍ³ÅÌ¶ÔÓ¦Îª/
-·½·¨£ºmount¡¢df -h¡¢lsblk
+		# mkfs /dev/sdb	æ–‡ä»¶ç³»ç»Ÿåˆ†åŒº
+		# mount /dev/sdb	/mnt/test/	æŒ‚è½½
+		# umount /dev/sdb	/mnt/test/	å¸è½½
+		# sync	åˆ·æ–°
 
-£¨9£©Í¼ĞÎ½çÃæ¿¨ËÀ½â¾ö·½·¨
-# killall -9 gnome-shell
+- ç³»ç»Ÿç›˜ä¸æ•°æ®ç›˜
 
+		ç³»ç»Ÿç›˜å¯¹åº”ä¸º/
+		æ–¹æ³•ï¼šmountã€df -hã€lsblk
+
+- å›¾å½¢ç•Œé¢å¡æ­»è§£å†³æ–¹æ³•
+	- killall -9 gnome-shell
+
+- æŸ¥è¯¢è®¾å¤‡åç§°
+	- dmidecode | grep -i 'Product Name:'
+
+- æŸ¥è¯¢èµ„äº§ç¼–å·
+	- dmidecode | grep -i 'Serial Number:'
