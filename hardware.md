@@ -13,6 +13,8 @@
 - 硬盘和分区
 	- lsblk	查看硬盘和分区分布
 	- fdisk -l	看硬盘和分区的详细信息
+		- fdisk -l | grep dm 检测是否有组raid
+		- 服务器未组raid，会影响系统对盘的识别
 	- lsscsi	列出像硬盘和光驱等 scsi/sata设备的信息
 	- df 列出不同分区的概要信息、挂载点、已用的和可用的空间
 	- dmesg	查询硬件和boot信息
