@@ -30,6 +30,8 @@
 
 - 内核
 	- uname -a
+		- arm(xxx0)：aarch64
+		- x86(xxx8)：x86_64
 
 - 硬件设备挂卸载
 
