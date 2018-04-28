@@ -53,3 +53,13 @@
 
 - 查询资产编号
 	- dmidecode | grep -i 'Serial Number:'
+
+- 配置yum源
+	- cd /etc/yum.repos.d/
+	- vim Euler.repo
+		
+			[Euler]
+			name=Euler
+			baseurl=file:///media/CentOS_6.5_Final
+			gpgcheck=0
+			enabled=1
